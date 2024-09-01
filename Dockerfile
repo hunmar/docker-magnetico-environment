@@ -24,9 +24,9 @@ RUN apt update \
     /usr/share/lintian
     
 # Get magneticod and magneticow
-RUN magnetico_latest=$(curl --silent "https://api.github.com/repos/boramalper/magnetico/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/') \
-    && curl -so /opt/magnetico/magneticod -L https://github.com/boramalper/magnetico/releases/download/$magnetico_latest/magneticod \
-    && curl -so /opt/magnetico/magneticow -L https://github.com/boramalper/magnetico/releases/download/$magnetico_latest/magneticow
+RUN magnetico_latest=$(curl --silent "https://api.github.com/repos/tgragnato/magnetico/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/') \
+    && curl -so /opt/magnetico/magneticod -L https://github.com/tgragnato/magnetico/releases/download/$magnetico_latest/magneticod \
+    && curl -so /opt/magnetico/magneticow -L https://github.com/tgragnato/magnetico/releases/download/$magnetico_latest/magneticow
 
 VOLUME /root/.local/share/magneticod
 
